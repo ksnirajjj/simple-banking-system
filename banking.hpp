@@ -1,6 +1,8 @@
 #ifndef banking_hpp
 #define banking_hpp
 
-double createAccno(); 
+void createAccno(); // generate new acc no for creating new account
+
+void createAccount(); 
 
 #endif

@@ -156,10 +156,41 @@ void withDraw(double amount, string email){
         json& account = it.value(); 
 
         if(account["email"] == email){
+            if(account["balance"].get<double>() < amount){
+                cout << "Insufficient balance. " << endl; 
+                break; 
+            }
             account["balance"] = account["balance"].get<double>() - amount; 
             break;  
         }
     }
     ofstream out("banking_data.json"); 
     out << data.dump(4); 
+}
+
+void transfer(double amount, string sender, string receiver){
+    withDraw(amount, sender); 
+    deposit(amount, receiver); 
+}
+
+void moneyHistory(string email, string transactionType, double amount, string email2){
+    ifstream file("banking_data.json"); 
+    json data; 
+    file >> data; 
+
+    data["transfers"][email] = {
+        {"amount", amount},
+        {"Transaction type", transactionType}, 
+        {"Transferred to: ", email2}, 
+        {"date: ", time(nullptr)}
+    }; 
+
+    ofstream out("banking_data.json"); 
+
+    out << data.dump(4); 
+    file.close(); 
+}
+
+void viewHistory(){
+    
 }

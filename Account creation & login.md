@@ -1,7 +1,5 @@
 
-jan 8 Deposit / withdraw / transfer
-jan 9 Transaction history
-jan 10 Transaction history
+jan 10 Transaction history(transfer)
 jan 11 Multiple account types
 jan 12 Multiple account types
 jan 13 Admin panel

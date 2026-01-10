@@ -1,10 +1,23 @@
 {
     "accounts": {
+        "1000000000": {
+            "balance": 1234.0,
+            "email": "anushakhadka433@gmail.com",
+            "name": "Niraj Shrestha",
+            "pin": 89
+        },
         "1373593974": {
-            "balance": 235.0,
+            "balance": 900.0,
             "email": "niraj.academy1@gmail.com",
             "name": "Niraj Shrestha",
             "pin": 89
+        }
+    },
+    "email": {
+        "niraj.academy1@gmail.com": {
+            "Transaction type": "deposit",
+            "Transferred to: ": "N/A",
+            "amount": 100.0
         }
     }
 }

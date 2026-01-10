@@ -17,4 +17,8 @@ void deposit(double amount, string email);
 
 void withDraw(double amount, string email); 
 
+void transfer(double amount, string sender, string receiver); 
+
+void moneyHistory(string email, string transactionType, double amount, string email2); 
+
 #endif

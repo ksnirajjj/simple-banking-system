@@ -178,7 +178,9 @@ void moneyHistory(string email, string transactionType, double amount, string em
     json data; 
     file >> data; 
 
-    data["transfers"][email] = {
+
+    data["transfers"][to_string(rand())] = {
+        {"email", email}, 
         {"amount", amount},
         {"Transaction type", transactionType}, 
         {"Transferred to: ", email2}, 
@@ -191,6 +193,18 @@ void moneyHistory(string email, string transactionType, double amount, string em
     file.close(); 
 }
 
-void viewHistory(){
+void viewHistory(string email){
+    ifstream file("banking_data.json"); 
+    json data; 
+    file >> data; 
     
+    for(auto it=data["transfers"].begin(); it!= data["transfers"].end(); it++){
+        json& account = it.value(); 
+
+        if(account["email"] == email){
+            cout << "Transaction type :" << account["Transaction type"] << endl; 
+            cout << "Transferred to: " << account["Transferred to"] << endl; 
+            cout << "amount: " <<  account["amount"] << endl;
+        }
+    }
 }

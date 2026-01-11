@@ -21,4 +21,6 @@ void transfer(double amount, string sender, string receiver);
 
 void moneyHistory(string email, string transactionType, double amount, string email2); 
 
+void viewHistory(string email); 
+
 #endif

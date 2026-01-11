@@ -7,17 +7,26 @@
             "pin": 89
         },
         "1373593974": {
-            "balance": 900.0,
+            "balance": 4893.0,
             "email": "niraj.academy1@gmail.com",
             "name": "Niraj Shrestha",
             "pin": 89
         }
     },
-    "email": {
-        "niraj.academy1@gmail.com": {
+    "transfers": {
+        "16807": {
             "Transaction type": "deposit",
             "Transferred to: ": "N/A",
-            "amount": 100.0
+            "amount": 8.0,
+            "date: ": 1768121650,
+            "email": "niraj.academy1@gmail.com"
+        },
+        "282475249": {
+            "Transaction type": "withdraw",
+            "Transferred to: ": "N/A",
+            "amount": 99.0,
+            "date: ": 1768121677,
+            "email": "niraj.academy1@gmail.com"
         }
     }
 }

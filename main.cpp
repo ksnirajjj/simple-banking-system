@@ -34,10 +34,11 @@ int main(){
                 cout << "1. Deposit" << endl;
                 cout << "2. Withdraw" << endl;  
                 cout << "3. Transfer" << endl; 
-                cout << "4. Transaction Type" << endl; 
+                cout << "4. View History" << endl; 
                 cin >> choice2; 
                 double amount;
                 string email2;  
+                int placeHolder; 
 
                 switch(choice2){
                     case 1:
@@ -67,7 +68,13 @@ int main(){
                         goto loginPage; 
                         break;
                     case 4: 
-                        
+                        cout << "------------------------------" << endl; 
+                        viewHistory(email); 
+                        cout << "------------------------------" << endl; 
+                        cout << "Press any key to continue: "; 
+                        cin >> placeHolder; 
+                        goto loginPage; 
+                        break; 
                 }; 
             }
             else{

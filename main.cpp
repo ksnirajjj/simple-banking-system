@@ -26,6 +26,7 @@ int main(){
             cin >> email; 
             cout << "Enter your pin: "; 
             cin >> pin; 
+            if(!isFrozen(email)){
             if(logIn(email, pin)){
                 loginPage:
                 displayInfo(email); 
@@ -76,9 +77,10 @@ int main(){
                         goto loginPage; 
                         break; 
                 }; 
-            }
+                }
             else{
                 goto menu; 
+            }
             }
             break; 
 
@@ -87,9 +89,21 @@ int main(){
             cout << "Acount created successfully" << endl; 
             goto menu; 
             break;  
+        
+        case 987654:
+            int choice3; 
+            displayAdminInfo(); 
+            cin >> choice3;
+            string emailtoFreeze; 
 
-    
-
+        
+            switch(choice3){
+                case 1:
+                    cout << "Enter the email associated with the account you wish to freeze: "; 
+                    cin >> emailtoFreeze; 
+                    freezeEmail(emailtoFreeze); 
+                    cout << "Task successful." << endl; 
+            }
     }; 
 
 }

@@ -208,3 +208,46 @@ void viewHistory(string email){
         }
     }
 }
+
+void displayAdminInfo(){
+    cout << "---------------------------------------" << endl; 
+    cout << "Enter the admin task you want to do: " << endl; 
+    cout << "1. Freeze account" << endl; 
+    cout << "2. Change info" << endl; 
+}
+
+void freezeEmail(string email){
+    ifstream file("banking_data.json"); 
+    json data; 
+    file >> data; 
+    
+    int num = 1; 
+    data["frozen"][to_string(num)]={
+        {"email", email}
+    }; 
+
+    num++; 
+
+    ofstream out("banking_data.json"); 
+    out << data.dump(4); 
+
+}
+
+bool isFrozen(string email){
+    ifstream file("banking_data.json"); 
+    json data; 
+    file >> data; 
+
+    for(auto it = data["frozen"].begin(); it != data["frozen"].end(); it++){
+        json& account = it.value(); 
+
+        if(account["email"] == email){
+            cout << "Acount is frozen. " << endl; 
+            return true; 
+        }
+        else{
+            return false; 
+        }
+    }
+    return false; 
+}

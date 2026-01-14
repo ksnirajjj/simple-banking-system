@@ -11,6 +11,17 @@
             "email": "niraj.academy1@gmail.com",
             "name": "Niraj Shrestha",
             "pin": 89
+        },
+        "9999999999": {
+            "balance": 4893.0,
+            "email": "nirajshrestha674@gmail.com",
+            "name": "Niraj Shrestha",
+            "pin": 89
+        }
+    },
+    "frozen": {
+        "1": {
+            "email": "nirajshrestha674@gmail.com"
         }
     },
     "transfers": {

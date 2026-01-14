@@ -23,4 +23,10 @@ void moneyHistory(string email, string transactionType, double amount, string em
 
 void viewHistory(string email); 
 
+void displayAdminInfo(); 
+
+void freezeEmail(string email); 
+
+bool isFrozen(string email); 
+
 #endif

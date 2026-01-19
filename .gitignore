@@ -1,0 +1,57 @@
+# --- macOS system files ---
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+
+# --- Build artifacts ---
+main
+*.out
+*.o
+*.obj
+*.exe
+*.dll
+*.so
+*.a
+*.lo
+*.la
+
+# --- CMake and build directories ---
+/build/
+/cmake-build*/
+
+# --- Logs ---
+*.log
+
+# --- Backup / temp files ---
+*~
+*.tmp
+*.temp
+*.swp
+*.swo
+
+# --- JSON temporary or corrupted files ---
+*.json.tmp
+
+# --- Visual Studio Code ---
+.vscode/
+*.code-workspace
+
+# --- CLion / JetBrains ---
+.idea/
+cmake-build-*/
+
+# --- Cache ---
+.cache/
+*.bak
+
+# --- Auto-generated binaries ---
+/bin/
+/dist/
+/Debug/
+/Release/
+
+# --- Project-specific unwanted files ---
+# Remove stray files like "mai", "functions", etc.
+mai
+functions

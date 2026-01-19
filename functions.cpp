@@ -251,3 +251,70 @@ bool isFrozen(string email){
     }
     return false; 
 }
+
+void changeAccDetails(string email){
+    ifstream file("banking_data.json"); 
+    json data; 
+
+    file >> data; 
+
+    int num; 
+    string change; 
+    double balance; 
+    int pin; 
+    string name; 
+    menu3:
+    cout << "What to you want to change? " << endl; 
+    cout << "1. Balance" << endl; 
+    cout << "2. Pin" << endl; 
+    cout << "3. Name" << endl; 
+    cin >> num; 
+
+    switch(num){
+        case 1: 
+            change = "balance"; 
+            cout << "Enter new value: "; 
+            cin >> balance; 
+            for(auto it= data["accounts"].begin(); it!=data["accounts"].end(); it++){
+                json& account = it.value(); 
+
+                if(account["email"] == email){
+                    account[change] = balance; 
+                }
+             }
+
+            break; 
+        case 2:
+            change = "pin"; 
+            cout << "Enter new value: "; 
+            cin >> pin; 
+            for(auto it= data["accounts"].begin(); it!=data["accounts"].end(); it++){
+                json& account = it.value(); 
+
+                if(account["email"] == email){
+                    account[change] = pin; 
+                }
+             }
+            break; 
+        case 3:
+            change = "name"; 
+            cout << "Enter new value: "; 
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            getline(cin, name); 
+             for(auto it= data["accounts"].begin(); it!=data["accounts"].end(); it++){
+                json& account = it.value(); 
+
+                if(account["email"] == email){
+                    account[change] = name; 
+                }
+             }
+            break; 
+        default:
+            goto menu3; 
+    }
+
+    ofstream out("banking_data.json"); 
+    out << data.dump(4); 
+}
+
+

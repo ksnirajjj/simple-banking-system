@@ -94,15 +94,23 @@ int main(){
             int choice3; 
             displayAdminInfo(); 
             cin >> choice3;
-            string emailtoFreeze; 
+            string email3, email4, email5; 
 
         
             switch(choice3){
                 case 1:
                     cout << "Enter the email associated with the account you wish to freeze: "; 
-                    cin >> emailtoFreeze; 
-                    freezeEmail(emailtoFreeze); 
+                    cin >> email3; 
+                    freezeEmail(email3); 
                     cout << "Task successful." << endl; 
+                    break; 
+                
+                case 2:
+                    cout << "Enter the email associated with the account you wish to change: "; 
+                    cin >> email4; 
+                    changeAccDetails(email4); 
+                    cout << "Task successful. " << endl; 
+                    break; 
             }
     }; 
 

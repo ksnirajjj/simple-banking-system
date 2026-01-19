@@ -29,4 +29,6 @@ void freezeEmail(string email);
 
 bool isFrozen(string email); 
 
+void changeAccDetails(string email); 
+
 #endif
